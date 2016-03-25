@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   resources :products
-  #resources :users
+
   devise_for :users
   root 'home#index'
 
+  # allows the user to view their profile and edit it
+  as :user do
+    get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_reg'    
+    put 'users' => 'devise/registrations#update', :as => 'user_reg'            
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

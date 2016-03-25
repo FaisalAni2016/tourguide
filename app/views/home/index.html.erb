@@ -2,6 +2,8 @@
 <p>Input the tour details you want and have companies bid to bring you on them.</p><br>
 <i><small>Some features are still being developed.</small></i>
 <br><br>
+
+<!-- If the user is not signed in, show them where to go -->
 <% if !user_signed_in? %>
 <p>Sign up through the <%= link_to "Sign In", new_user_session_path %> button.</p>
 <% end %>
